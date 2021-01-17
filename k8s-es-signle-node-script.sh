@@ -1,0 +1,1 @@
+sudo microk8s.kubectl apply -f k8s-es-signle-node.yml

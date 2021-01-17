@@ -1,4 +1,4 @@
-# elasticsearch-k8s
+10.1.162.132# elasticsearch-k8s
 
 
 # Docker setup
@@ -11,12 +11,12 @@ sudo docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker
 # APIs
 
 * curl -X GET "localhost:9200/_cat/nodes?v&pretty"
-* curl -X GET http://localhost:9200/_search?pretty=true
-* curl -X GET http://localhost:9200/_cat/indices?pretty=true
-* curl -X PUT http://localhost:9200/dummy-index
-* curl -X GET http://localhost:9200/dummy-index/_search?pretty=true
+* curl -X GET http://10.1.162.132:9200/_search?pretty=true
+* curl -X GET http://10.1.162.132:9200/_cat/indices?pretty=true
+* curl -X PUT http://10.1.162.132:9200/dummy-index
+* curl -X GET http://10.1.162.132:9200/dummy-index/_search?pretty=true
 
-* curl -d '{"@timestamp":"2099-11-15T13:12:00", "user":{"id":"testId"},"event":{"name":"login_success","type":"login"}}' -H "Content-Type: application/json" -X POST http://localhost:9200/dummy-index/_doc
+* curl -d '{"@timestamp":"2099-11-15T13:12:00", "user":{"id":"testId"},"event":{"name":"login_success","type":"login"}}' -H "Content-Type: application/json" -X POST http://10.1.162.132:9200/dummy-index/_doc
 
 * curl -X GET http://localhost:9200/dummy-index/_search?pretty=true
 
@@ -51,3 +51,8 @@ kubectl apply -f k8s-es-multi-node-stateful.yml
 Test APIs
 
 # kubernetes equivalent of esdata
+
+# microk8s install
+sudo snap install microk8s --classic
+
+
