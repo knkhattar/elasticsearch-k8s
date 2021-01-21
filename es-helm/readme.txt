@@ -36,8 +36,6 @@ TEST PERSISTENCE
 	  curl -X GET http://localhost:9200/_search?pretty=true
 	curl localhost:9200/_cat/indices
 	
-	OR CHANGE IMAGE TAG FROM 7.10.0 TO 7.10.1 AND TRY
-	
 	helm upgrade elasticsearch elastic/elasticsearch -f values.yaml
 	
 UNINSTALL es HELM IF NOT REQUIRED
